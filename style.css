@@ -1,0 +1,182 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+Body {
+  background: var(--background);
+  height: 100vh;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--textos);
+}
+
+:root {
+  --background: url(./assets/background-escuro-mobile.png) no-repeat top
+    center/cover;
+  --textos: white;
+  --borda-lista: rgba(255, 255, 255, 0.5);
+  --fundo-lista: rgba(255, 255, 255, 0.1);
+  --fundo-hover: rgba(255, 255, 255, 0.05);
+  --borda-hover: white;
+  --icone-botao: url(./assets/moonstar.svg);
+}
+
+.modo-branco {
+  --background: url(./assets/background-branco-mobile.png) no-repeat top
+    center/cover;
+  --textos: black;
+  --borda-lista: rgba(0, 0, 0, 0.5);
+  --fundo-lista: rgba(0, 0, 0, 0.1);
+  --fundo-hover: rgba(0, 0, 0, 0.05);
+  --borda-hover: black;
+  --icone-botao: url(./assets/sun.svg);
+}
+
+#container1 {
+  margin: 56px auto auto;
+  width: 100%;
+  max-width: 588px;
+}
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px;
+}
+
+#profile p {
+  margin-top: 8px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+#botao-tema {
+  position: relative;
+  width: 64px;
+  margin: 0 auto;
+}
+
+#botao-tema button {
+  background: white var(--icone-botao) no-repeat center;
+  border: none;
+  top: 50%;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  transform: translateY(-50%);
+  animation: slide-off 0.4s forwards;
+}
+
+.modo-branco #botao-tema button {
+  animation: slide 0.4s forwards;
+}
+
+#botao-tema span {
+  display: block;
+  height: 24px;
+  width: 64px;
+  background: var(--fundo-lista);
+  border: 1px solid var(--borda-lista);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+  position: relative;
+}
+
+#botao-tema button:hover {
+  outline: 8px solid var(--fundo-hover);
+}
+
+#links ul {
+  padding: 24px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#links a {
+  display: block;
+  text-align: center;
+  padding: 16px 24px;
+  margin: auto;
+  background: var(--fundo-lista);
+  border: 1px solid var(--borda-lista);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+#links a:hover {
+  background: var(--fundo-hover);
+  border: 1.5px solid var(--borda-hover);
+}
+
+#social_links {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  padding: 24px 0;
+}
+
+#social_links a {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+#social_links a:hover {
+  background: var(--fundo-hover);
+  padding: 14x;
+}
+
+footer {
+  text-align: center;
+  padding: 24px 0;
+  font-size: 14px;
+}
+
+@media (min-width: 700px) {
+  :root {
+    --background: url(./assets/background-escuro-desktop.png) no-repeat top
+      center/cover;
+  }
+
+  .modo-branco {
+    --background: url(./assets/background-branco-desktop.png) no-repeat top
+      center/cover;
+  }
+}
+
+@keyframes slide {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-off {
+  from {
+    right: 0;
+  }
+  to {
+    right: 50%;
+  }
+}
